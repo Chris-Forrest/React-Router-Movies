@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
 const MovieList = props => {
   const [movies, setMovies] = useState([])
+ 
+
   useEffect(() => {
     const getMovies = () => {
       axios
@@ -16,7 +19,7 @@ const MovieList = props => {
     }
     
     getMovies();
-  }, []);
+  }, [id]);
   
   return (
     <div className="movie-list">
